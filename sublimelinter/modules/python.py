@@ -129,7 +129,7 @@ class Linter(BaseLinter):
             return [PythonError(filename, 0, e.args[0])]
         else:
             # Okay, it's syntactically valid.  Now check it.
-            w = pyflakes.Checker(tree, filename, ignores)
+            w = pyflakes.Checker(tree, filename, ignore)
             return w.messages
 
     def pep8_check(self, code, filename, ignore=None):
